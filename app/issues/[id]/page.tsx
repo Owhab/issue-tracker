@@ -3,6 +3,7 @@ import prisma from "@/prisma/client";
 import { Pencil2Icon } from "@radix-ui/react-icons";
 import { Box, Button, Card, Flex, Grid, Heading, Text } from "@radix-ui/themes";
 import delay from "delay";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import ReactMarkdown from "react-markdown";
 
@@ -34,7 +35,8 @@ const IssueDetailPage = async ({ params }: Props) => {
       </Box>
       <Box>
         <Button>
-          <Pencil2Icon /> Edit Issue
+          <Pencil2Icon />{" "}
+          <Link href={`/issues/${issue.id}/edit`}>Edit Issue</Link>
         </Button>
       </Box>
     </Grid>
